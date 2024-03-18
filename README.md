@@ -15,4 +15,8 @@ ng g app --dry-run
 ng serve
 ```
 
+```shell
+ng add @angular-eslint/schematics
+```
+
 {{ }} <- proprieta javascript
