@@ -1,0 +1,78 @@
+<h3>DD FORMULARIO</h3>
+<p>Un formulario statico</p>
+<form [formGroup]="formGroup">
+  <fieldset>
+    <legend>Datos personales</legend>
+    <div class="control">
+      <label>
+        <span>Nombre:</span>
+        <input type="text" formControlName="name" />
+      </label>
+    </div>
+    <div class="control">
+      <label>
+        <span>Correo:</span>
+        <input type="email" formControlName="email" />
+      </label>
+    </div>
+    <div class="control">
+      <label>
+        <span>Contraseña:</span>
+        <input type="password" formControlName="password" />
+      </label>
+    </div>
+    <div class="control">
+      <label>
+        <span>Fecha de nacimiento:</span>
+        <input type="date" name="date" ngForm />
+      </label>
+    </div>
+    <div class="control">
+      <label>
+        <span>Comentarios:</span>
+        <textarea name="comentarios" ngForm></textarea>
+      </label>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Opciones</legend>
+    <div class="control">
+      <label>
+        <span>Selecciona un curso:</span>
+        <select name="curso" ngForm>
+          <option value="Angular">Angular</option>
+          <option value="React">React</option>
+          <option value="NodeJs">Node</option>
+        </select>
+      </label>
+    </div>
+    <fieldset>
+      <legend>Selecciona una sede:</legend>
+      <div class="control">
+        <label>
+          <input type="radio" name="sede" value="Madrid" ngForm /> Madrid
+        </label>
+        <label>
+          <input type="radio" name="sede" value="Cadiz" ngForm /> Cádiz
+        </label>
+        <label>
+          <input type="radio" name="sede" value="Gijon" ngForm /> Gijón
+        </label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Términos</legend>
+      <div class="control">
+        <label>
+          <input type="checkbox" name="terminos" value="1" ngForm />
+          Estoy de acuerdo ....
+        </label>
+      </div>
+    </fieldset>
+  </fieldset>
+  <fieldset>
+    <button type="submit">Enviar</button>
+    <button type="reset">Limpiar</button>
+  </fieldset>
+</form>
+{{ formGroup.value | json }}
