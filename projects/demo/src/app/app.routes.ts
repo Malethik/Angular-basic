@@ -33,20 +33,20 @@ export const routes: Routes = [
     title: 'Form',
     loadComponent: () => import('./feature/user/user.component'),
     children: [
-      { path: '', pathMatch: 'full', redirectTo: 'form' },
+      { path: '', pathMatch: 'full', redirectTo: 'register_dd' },
       {
-        path: 'registerdd',
-        title: 'Registro(Data Driven)',
+        path: 'register_dd',
+        title: 'Registro (Data Driven)',
         loadComponent: () =>
           import('./feature/user/component/dd-register/dd-register.component'),
       },
       {
-        path: 'registertd',
-        title: 'Registro(template Driven)',
+        path: 'register_td',
+        title: 'Registro (Template Driven)',
         loadComponent: () =>
           import('./feature/user/component/td-register/td-register.component'),
       },
-      { path: '**', redirectTo: 'form' },
+      { path: '**', redirectTo: 'register_dd' },
     ],
   },
   { path: '**', redirectTo: 'home' },

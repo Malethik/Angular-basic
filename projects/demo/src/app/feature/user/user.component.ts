@@ -14,7 +14,8 @@ import { routes } from '../../app.routes';
 export default class UserComponent {
   menuOptions: MenuOption[] = [];
   constructor() {
-    this.menuOptions = routes[5]
+    this.menuOptions = routes
+      .find((item) => item.path === 'users')!
       .children!.filter((route) => route.path !== '**' && route.path !== '')
       .map((route) => ({
         title: route.title as string,
